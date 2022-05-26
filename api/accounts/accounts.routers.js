@@ -7,14 +7,17 @@ const {
   accountList,
   accountUpdate,
   accountDelete,
+  accountVips,
 } = require("./accounts.controllers");
 
 router.get("/", accountList);
 
 router.post("/", accountCreate);
 
+router.put("/:accountId", accountUpdate);
+
 router.delete("/:accountId", accountDelete);
 
-router.put("/:accountId", accountUpdate);
+router.get("/vip", accountVips);
 
 module.exports = router;
